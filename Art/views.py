@@ -8,13 +8,16 @@ from django.shortcuts import redirect
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'html/post_list.html', {})
+    return render(request, 'html/post_list.html', {'post': post})
+
 def MarketPlace(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'html/MarketPlace.html', {})
+    return render(request, 'html/MarketPlace.html', {'MarketPlace': MarketPlace})
+
 def Jobs(request, pk):
    	post = get_object_or_404(Post, pk=pk)
-    return render(request, 'html/Jobs.html', {})
+    return render(request, 'html/Jobs.html', {'Jobs': Jobs})
+    
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
