@@ -21,6 +21,8 @@ urlpatterns = [
     path('', include('Art.urls')),
     path('', include('MarketPlace.html')),
     path('', include('Jobs.html')),
+    path('accounts/login/', views.LoginView.as_view(), name='login'),
+    path('accounts/logout/', views.LogoutView.as_view(), name='logout'),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
