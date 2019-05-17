@@ -11,12 +11,12 @@ def post_list(request):
     return render(request, 'html/post_list.html', {'post': post})
 
 def MarketPlace(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    return render(request, 'html/MarketPlace.html', {'MarketPlace': MarketPlace})
+    marketplace = get_object_or_404(MarketPlace, pk=pk)
+    return render(request, 'html/MarketPlace.html', {'marketPlace': marketPlace})
 
 def Jobs(request, pk):
-   	post = get_object_or_404(Post, pk=pk)
-    return render(request, 'html/Jobs.html', {'Jobs': Jobs})
+   	jobs = get_object_or_404(Jobs, pk=pk)
+    return render(request, 'html/Jobs.html', {'jobs': jobs})
     
 def post_new(request):
     if request.method == "POST":
