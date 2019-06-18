@@ -23,7 +23,15 @@
 	</header>
 	<article>
 		<h2>Marketplace</h2>
-		Resources for Artists
+		Resources for Artists	
+		{% for arte in marketPlace %}
+			<p>{{arte.titulo}}</p>
+			<p>{{arte.descricao}}</p>
+			<a href="{% url 'arts:comprarArte' pk=arte.pk %}">Buy</a>
+		{% endfor %}
+
+
+
 	</article>
 	<footer>
 		<form method="get">

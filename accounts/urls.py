@@ -1,7 +1,7 @@
-from django.urls import ppath
+from django.urls import path
 
 from . import views
 
-urlparttens = [
+urlpatterns = [
 	path('signup/', views.SignUp.as_view(), name='signup'),
 ]

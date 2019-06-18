@@ -15,9 +15,9 @@
 </head>														
 	<header>
 		<nav class="pages">
-			<a class="ArtStation" href="post_list.html">ArtStation</a>
-			<a class="MarketPlace" href="MarketPlace.html">MarketPlace</a>
-			<a class="Jobs" href="Jobs.html">Jobs</a>
+			<a class="ArtStation" href="{%url 'arts:post_list'%}">ArtStation</a>
+			<a class="MarketPlace" href="{%url 'arts:MarketPlace'%}">MarketPlace</a>
+			<a class="Jobs" href="{%url 'arts:Jobs'%}">Jobs</a>
 	</header>
 	<article>
 		The Showcase Platform for
@@ -25,13 +25,10 @@
 	<article>
 		Art & Design
 	</article>
-		<div class="image">
-		<img class="Ahri" src="../img/Ahri.jpeg" alt="League Of Legends - Ahri">
-		<img class="Ahri1" src="../img/Nami Guardiã Estelar.jpeg" alt="Nami Guardiã Estelar">
-		<img class="Ahri2" src="../img/Sorakinha nervosa.jpeg" alt="Sorakinha Nervosa">
-		<img class="Eve" src="../img/Dark.jpeg" alt="Darkness">
-		<img class="Eve1" src="../img/Girl.jpeg" alt="Girl Alone">
-		<img class="Eve2" src="../img/Rabisco.jpeg" alt="Rabiscos">
+		{%block conteudo%}
+			
+
+		{%endblock%}
 	</div>
 	<footer>
 		<form method="get">

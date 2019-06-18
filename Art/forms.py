@@ -9,13 +9,13 @@ class PostForm(forms.ModelForm):
         fields = ('title', 'text',)
 
 
-class PostForm(forms.ModelForm):
+class ArteForm(forms.ModelForm):
 
     class Meta:
         model = Artes
-        fields = ('titulo', 'descricao',)
+        fields = ('titulo', 'descricao', 'imagem')
 
-class PostForm(forms.ModelForm):
+class UserForm(forms.ModelForm):
 
     class Meta:
         model = Usuario
