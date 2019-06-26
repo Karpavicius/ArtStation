@@ -27,6 +27,7 @@ def comprarArte(request, pk):
         return render(request, 'html/Arte.html', {'arte':arte})
     return redirect('arts:post_list')
 
+@login_required
 def confirmPurchase(request, pk):
     arte = Artes.objects.get(pk=pk)
     arte.comprador = request.user
