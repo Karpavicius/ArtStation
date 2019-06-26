@@ -5,8 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from .forms import PostForm, ArteForm, JobsForms
 from django.shortcuts import redirect
 from django.core.mail import send_mail, BadHeaderError
-
-
+from django.contrib.auth.decorators import login_required
 
 def cadastrarArte(request):
     if request.method == "POST":
