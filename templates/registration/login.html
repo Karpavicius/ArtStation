@@ -1,4 +1,4 @@
-{% extends "skeleton.html" %}
+{% extends 'startbootstrap-grayscale-gh-pages/index.html' %}
 
 {% block conteudo %}
     {% if form.errors %}
@@ -7,6 +7,7 @@
 
     <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
+    <h3>Sign up</h3>
         <table>
         <tr>
             <td>{{ form.username.label_tag }}</td>
@@ -18,11 +19,11 @@
         </tr>
         </table>
 
-        <input type="submit" value="login" />
+       <button type="submit"class="btn btn-primary js-scroll-trigger mt-3">Sign Up</button>
         <input type="hidden" name="next" value="{{ next }}" />
     </form>
 		<br />
 		<p>
-			<a href="{% url 'password_reset' %}">Esqueci minha senha :(</a>
+			<a href="{% url 'password_reset' %}">Forget your password?</a>
 		</p>
 {% endblock %}

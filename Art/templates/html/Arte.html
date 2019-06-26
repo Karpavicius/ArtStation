@@ -1,0 +1,17 @@
+{% extends 'startbootstrap-grayscale-gh-pages/index.html' %}
+{% load static %}
+
+     {% block conteudo %} 
+     
+      <p>{{arte.titulo}}</p>
+      <p>{{arte.descricao}}</p>
+      {% if arte.imagem %}
+        <div class="col-lg-6">
+          <img class="img-fluid" src="{{arte.imagem.url}}" alt="">
+        </div>
+        {%endif%}
+
+
+
+      <a href="{% url 'arts:confirm' pk=arte.pk %}">Confirm Purchase</a>
+     {% endblock %}

@@ -19,9 +19,9 @@ class Post(models.Model):
 
 class Artes(models.Model):
     artistas = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name = 'artistas')
-    titulo = models.CharField(max_length=200)
-    descricao = models.TextField()
-    imagem = models.ImageField(upload_to='images/', blank=True, default=None)
+    titulo = models.CharField('Title',max_length=200)
+    descricao = models.TextField('Discription')
+    imagem = models.ImageField('Image', upload_to='images/', blank=True, default=None)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     comprador = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name = 'comprador', blank=True, null=True, default=None)
@@ -44,3 +44,12 @@ class Usuario(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Jobs(models.Model):
+    empresa = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    nome = models.CharField('Name',max_length=200)
+    local = models.TextField('Location')
+    imagem = models.ImageField('Image', upload_to='images/', blank=True, default=None)
+    vagas = models.TextField('Jobs Open')
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)

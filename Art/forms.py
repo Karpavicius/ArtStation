@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Post, Artes, Usuario
+from .models import Post, Artes, Usuario, Jobs
 
 class PostForm(forms.ModelForm):
 
@@ -20,3 +20,9 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = Usuario
         fields = ('nome',)
+
+class JobsForms(forms.ModelForm):
+
+    class Meta:
+        model = Jobs
+        fields = ('nome', 'local', 'imagem', 'vagas')
