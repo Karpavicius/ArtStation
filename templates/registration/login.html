@@ -1,29 +1,22 @@
 {% extends 'startbootstrap-grayscale-gh-pages/index.html' %}
+{% load crispy_forms_tags %}
+
 
 {% block conteudo %}
     {% if form.errors %}
-        <p>Usuário e senha incorretos. Tente novamente..</p>
+        <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
 
     <form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    <h3>Sign up</h3>
-        <table>
-        <tr>
-            <td>{{ form.username.label_tag }}</td>
-            <td>{{ form.username }}</td>
-        </tr>
-        <tr>
-            <td>{{ form.password.label_tag }}</td>
-            <td>{{ form.password }}</td>
-        </tr>
-        </table>
-
-       <button type="submit"class="btn btn-primary js-scroll-trigger mt-3">Sign Up</button>
+        <h3>Login</h3>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <p>Fields with * are required.</p>
+        <button type="submit" class="btn btn-primary js-scroll-trigger mt-3">Login</button>
         <input type="hidden" name="next" value="{{ next }}" />
     </form>
-		<br />
-		<p>
-			<a href="{% url 'password_reset' %}">Forget your password?</a>
-		</p>
-{% endblock %}
+	<br />
+	<p>
+		<a href="{% url 'password_reset' %}">Forget your password?</a>
+	</p>
+{% endblock conteudo %}

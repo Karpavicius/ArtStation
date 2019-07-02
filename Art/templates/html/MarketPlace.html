@@ -3,56 +3,14 @@
 <html lang="en-us">
 <head>
 	<title>ArtStation - MarketPlace</title>
-	<link rel="stylesheet" href="{% static 'css/MarketPlace.css' %}">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<meta charset="utf-8">
-	<meta name="Description" content="Resources for Artists" />
-	<meta name="Keywords" content="ArtStation, MarketPlace, jobs" />
-	<meta name="Author" content="Evelin" />
-	<meta name="robots" content="MarketPlace, Follow" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" href="img/Art.ico"  />
 </head>
 <body>
-	<header>
-		<nav class="pages">
-			<a class="ArtStation" href="Index.html">ArtStation</a>
-			<a class="MarketPlace" href="MarketPlace.html">MarketPlace</a>
-			<a class="Jobs" href="Jobs.html">Jobs</a>
-		</nav>
-	</header>
 	<article>
-		<h2>Marketplace</h2>
-		Resources for Artists	
 		{% for arte in marketPlace %}
 			<p>{{arte.titulo}}</p>
 			<p>{{arte.descricao}}</p>
 			<a href="{% url 'arts:comprarArte' pk=arte.pk %}">Buy</a>
 		{% endfor %}
-
-
-
 	</article>
-	<footer>
-		<form method="get">
-			<fieldset>
-				<legend>Newsletter</legend>
-				<legend>Subscribe to the ArtStation newsletter to get awesome artwork in your mailbox weekly.</legend>
-				<input type="email" name="email"><br /><br />
-				<input type="Subscribe" name="Subscribe" value="Subscribe">
-			</fieldset>
-		</form>
-		<ol class="official">
-			<legend>Connect with us</legend>
-			<li><a class="ofLink" href="https://www.facebook.com/artstationhq">Facebook</a></li>
-			<li><a class="ofLink" href="https://www.instagram.com/artstationhq/">Instagram</a></li>
-			<li><a class="ofLink" href="https://twitter.com/artstationhq">Twitter</a></li>
-		</ol>
-		<ul class="custom">
-			<legend>Mobile App</legend>
-			<li><a class="cusLink" href="https://itunes.apple.com/us/app/artstation-app/id924645286">Download on the App Store</a></li>
-			<li><a class="cusLink" href="https://play.google.com/store/apps/details?id=com.ballistiq.artstation">Get it on Google Play</a></li>
-		</ul>
-	</footer>	
 </body>
 </html>

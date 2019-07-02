@@ -11,7 +11,15 @@
         </div>
         {%endif%}
 
-
-
-      <a href="{% url 'arts:confirm' pk=arte.pk %}">Confirm Purchase</a>
+      <button id="confirmButton">Confirm Purchase</button>
+      <div id="confirm" style="display: none;">
+          <form method="POST" action="/confirm/{{arte.pk}}">
+            {% csrf_token %}
+          <p>Enter your email</p>
+          <input type="text" name="email" id="email">
+          <button type="submit" >Sent</button>
+        </form>
+      </div>
+ <script type="text/javascript" src="{% static 'js/confirmPurchase.js' %}"></script>
+     
      {% endblock %}

@@ -18,7 +18,8 @@ class Post(models.Model):
         return self.title
 
 class Artes(models.Model):
-    artistas = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name = 'artistas')
+    autor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name = 'artistas')
+    artistas = models.CharField(max_length=100)
     titulo = models.CharField('Title',max_length=200)
     descricao = models.TextField('Discription')
     imagem = models.ImageField('Image', upload_to='images/', blank=True, default=None)

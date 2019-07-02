@@ -5,9 +5,9 @@
     <div class="post">
         {%for post in posts%}
         	{% if post.imagem%}
-        	<img src="{{post.imagem.url}}"/>
+        	<img src="{{post.imagem.url}}" alt=""/>
         	{%endif%}
 
         {%endfor%}
     </div>
-{% endblock %}
+{% endblock conteudo %}
