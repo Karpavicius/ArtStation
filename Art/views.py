@@ -8,6 +8,12 @@ from django.core.mail import send_mail, BadHeaderError
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.contrib import messages
+from django.http import JsonResponse
+
+
+def conta(request):
+    a = 2+2
+    return JsonResponse(a)
 
 @user_passes_test(lambda u: u.is_superuser)
 def cadastrarArte(request):

@@ -4,6 +4,7 @@ from . import views
 app_name='arts'
 
 urlpatterns = [
+    path('conta', views.conta, name='conta'),
     path('', views.post_list, name='post_list'),
     path('MarketPlace/', views.MarketPlace, name='MarketPlace'),
     path('jobs/', views.JobsList, name='JobsList'),
