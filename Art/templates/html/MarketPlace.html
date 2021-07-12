@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en-us">
+<head>
+	<title>ArtStation - MarketPlace</title>
+</head>
+<body>
+	<article>
+		{% for arte in marketPlace %}
+			<p>{{arte.titulo}}</p>
+			<p>{{arte.descricao}}</p>
+			<a href="{% url 'arts:comprarArte' pk=arte.pk %}">Buy</a>
+		{% endfor %}
+	</article>
+</body>
+</html>

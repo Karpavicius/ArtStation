@@ -1,0 +1,13 @@
+{% extends 'html/post_list.html' %}
+{% load staticfiles %}
+
+{% block conteudo %}
+    <div class="post">
+        {%for post in posts%}
+        	{% if post.imagem%}
+        	<img src="{{post.imagem.url}}" alt=""/>
+        	{%endif%}
+
+        {%endfor%}
+    </div>
+{% endblock conteudo %}

@@ -1,0 +1,26 @@
+{% extends 'startbootstrap-grayscale-gh-pages/index.html' %}
+
+{% block conteudo %}
+    {% for job in Jobs %}
+    	 <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+        {% if job.imagem %}
+        <div class="col-lg-6">
+          <img class="img-fluid" src="{{job.imagem.url}}" alt="">
+        </div>
+        {%endif%}
+        <div class="col-lg-6">
+          <div class="bg-black text-center h-100 project">
+            <div class="d-flex h-100">
+              <div class="project-text w-100 my-auto text-center text-lg-left">
+                <h4 class="text-white">{{job.nome}}</h4>
+                <p class="mb-0 text-white-50">{{job.local}}</p>
+                <p class="mb-0 text-white-50">{{job.vagas}}</p>
+                <p class="mb-0 text-white-50">{{job.empresa}}</p>
+                <hr class="d-none d-lg-block mb-0 ml-0">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+{% endblock conteudo %}

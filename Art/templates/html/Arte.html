@@ -1,0 +1,25 @@
+{% extends 'startbootstrap-grayscale-gh-pages/index.html' %}
+{% load static %}
+
+     {% block conteudo %} 
+     
+      <p>{{arte.titulo}}</p>
+      <p>{{arte.descricao}}</p>
+      {% if arte.imagem %}
+        <div class="col-lg-6">
+          <img class="img-fluid" src="{{arte.imagem.url}}" alt="">
+        </div>
+        {%endif%}
+
+      <button id="confirmButton">Confirm Purchase</button>
+      <div id="confirm" style="display: none;">
+          <form method="POST" action="/confirm/{{arte.pk}}">
+            {% csrf_token %}
+          <p>Enter your email</p>
+          <input type="text" name="email" id="email">
+          <button type="submit" >Sent</button>
+        </form>
+      </div>
+ <script type="text/javascript" src="{% static 'js/confirmPurchase.js' %}"></script>
+     
+     {% endblock %}

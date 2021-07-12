@@ -1,0 +1,13 @@
+{% extends 'startbootstrap-grayscale-gh-pages/index.html' %}
+{% load crispy_forms_tags %}
+
+{% block conteudo %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form|crispy }}
+
+        <button type="submit" class="btn btn-primary js-scroll-trigger mt-3">Submit</button>
+
+    </form>
+{% endblock conteudo %}
