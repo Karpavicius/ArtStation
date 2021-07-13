@@ -65,15 +65,15 @@ DATABASES = {
     }
 }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'EveADS$eveads',
-        'USER': 'EveADS',
-        'PASSWORD': 'projetofinal',
-        'HOST': 'EveADS.mysql.pythonanywhere-services.com',
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'EveADS$eveads',
+#        'USER': 'EveADS',
+#        'PASSWORD': 'projetofinal',
+#        'HOST': 'EveADS.mysql.pythonanywhere-services.com',
+#    }
+#}
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
