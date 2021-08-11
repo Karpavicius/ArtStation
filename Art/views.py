@@ -9,9 +9,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.contrib import messages
 from django.http import JsonResponse
-from django.views.decorators.csrf import csfr_exempt
+from django.views.decorators.csrf import csrf_exempt
 
-@csfr_exempt
+@csrf_exempt
 def conta(request):
     a = 2+2
     return JsonResponse(a)
